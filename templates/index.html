@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sudoku Solver & Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Sudoku Solver & Generator</h1>
+    <div id="container">
+        <div id="panel">
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <button onclick="generateBoard()">Generate New Puzzle</button>
+            <button onclick="visualSolveBoard()">Visualize Backtracking</button>
+            <label for="speed">Speed:</label>
+            <input type="range" id="speed" min="50" max="1000" value="300">
+            <span id="speedValue">300ms</span>
+        </div>
+        <div id="sudoku-board"></div>
+        <div id="visual-status"></div>
+    </div>
+    <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
+
